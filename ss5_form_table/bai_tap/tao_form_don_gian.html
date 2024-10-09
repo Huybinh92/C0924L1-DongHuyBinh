@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<form action="#" method="get"
+      style="display: inline-block; width: 500px; height: 400px; background-color: lightgoldenrodyellow">
+    <h2 style="display: block; padding: 10px; background-color: red; color: white; text-align: center">SỞ THÍCH CỦA
+        BẠN</h2>
+    <div style="padding: 30px">
+        <label for="yourname" style="display: inline-block; width: 80px; margin-bottom: 20px">Họ và tên</label>
+        <input type="text" name="yourname" id="yourname"><br>
+        <label for="email" style="display: inline-block; width: 80px; margin-bottom: 20px">Email</label>
+        <input type="email" name="email" id="email"><br>
+        <label style="display: inline-block; width: 80px">Sở thích</label>
+        <div style="display: inline-block; vertical-align: top">
+            <input type="checkbox" name="hobby" value="sport"><span
+                style="display: inline-block; width: 80px">Thể thao</span>
+            <input type="checkbox" name="hobby" value="music"><span
+                style="display: inline-block; width: 80px">Âm nhạc</span>
+            <input type="checkbox" name="hobby" value="reading"><span
+                style="display: inline-block; width: 80px; margin-bottom: 10px">Đọc sách</span><br>
+            <input type="checkbox" name="hobby" value="web"><span
+                style="display: inline-block; width: 80px">Lướt web</span>
+            <input type="checkbox" name="hobby" value="game"><span
+                style="display: inline-block; width: 80px">Chơi game</span>
+            <input type="checkbox" name="hobby" value="cinema"><span
+                style="display: inline-block; width: 80px; margin-bottom: 10px">Điện ảnh</span><br>
+            <input type="checkbox" name="hobby" value="travel"><span
+                style="display: inline-block; width: 80px; margin-bottom: 20px">Du lịch</span>
+        </div>
+        <br>
+        <button type="submit">Gửi thông tin</button>
+        <button type="reset">Nhập lại</button>
+    </div>
+</form>
+
+<form action="#" method="get"
+      style="display: inline-block; width: 500px; height: 500px; background-color: lightblue; margin-left: 40px; vertical-align: top">
+    <h2 style="display: block; padding: 10px; background-color: darkblue; color: white; text-align: center">ĐĂNG KÝ HỌC VIÊN</h2>
+    <div style="padding: 30px">
+        <label for="yourname" style="display: inline-block; width: 80px; margin-bottom: 20px">Họ và tên</label>
+        <input type="text" name="yourname" id="yourname"><br>
+        <label for="birthday" style="display: inline-block; width: 80px; margin-bottom: 20px">Ngày sinh</label>
+        <input type="date" name="birthday" id="birthday"><br>
+        <label style="display: inline-block; width: 80px">Giới tính</label>
+        <div style="display: inline-block; vertical-align: top">
+            <input type="radio" name="hobby" value="male"><span style="display: inline-block; width: 50px">Nam</span>
+            <input type="radio" name="hobby" value="female"><span style="display: inline-block; width: 50px; margin-bottom: 20px">Nữ</span>
+        </div>
+        <br>
+        <label for="address" style="display: inline-block; width: 80px">Địa chỉ</label>
+        <textarea name="address" id="address" style="vertical-align: top; margin-bottom: 20px"></textarea>
+        <br>
+        <label for="class" style="display: inline-block; width: 80px; margin-bottom: 20px">Lớp</label>
+        <select name="class" id="class">
+            <option value="K10">K10</option>
+            <option value="K10">K20</option>
+            <option value="K10">K30</option>
+        </select><br>
+        <label for="email" style="display: inline-block; width: 80px; margin-bottom: 20px">Email</label>
+        <input type="email" name="email" id="email"><br>
+        <label for="phone" style="display: inline-block; width: 80px; margin-bottom: 20px">Điện thoại</label>
+        <input type="number" name="phone" id="phone"><br>
+        <button type="submit">Đăng ký</button>
+        <button type="reset">Nhập lại</button>
+    </div>
+</form>
+</body>
+</html>
