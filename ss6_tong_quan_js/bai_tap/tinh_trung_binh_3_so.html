@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TB</title>
+</head>
+<body>
+<h1>Tính điểm trung bình 3 môn Toán, Lý, Hóa</h1>
+<div style="display: inline-block">
+    <label for="toan" style="display: inline-block; width: 120px">Điểm Toán</label><br>
+    <input type="number" id="toan" placeholder="Nhập điểm Toán" style="padding: 8px; margin-bottom: 16px">
+</div>
+<div style="display: inline-block">
+    <label for="ly" style="display: inline-block; width: 120px">Điểm Lý</label><br>
+    <input type="number" id="ly" placeholder="Nhập điểm Lý" style="padding: 8px; margin-bottom: 16px">
+</div>
+<div style="display: inline-block">
+    <label for="hoa" style="display: inline-block; width: 120px">Điểm Hóa</label><br>
+    <input type="number" id="hoa" placeholder="Nhập điểm Hóa" style="padding: 8px; margin-bottom: 16px">
+</div>
+<br>
+<button onclick="TinhTB()" style="background-color: dodgerblue; color: white;padding: 12px; display: inline-block; margin-right: 12px">Tính điểm TB 3 môn</button>
+    <p id="label" style="display: inline-block"><strong></p> <p id="tb" style="display: inline-block; color: red"></p>
+<script>
+    function TinhTB() {
+        let T = document.getElementById('toan').value;
+        let L = document.getElementById('ly').value;
+        let H = document.getElementById('hoa').value;
+        console.log(T);
+        console.log(L);
+        console.log(H);
+        document.getElementById('label').innerHTML = "<strong>Điểm trung bình 3 môn là: ";
+        document.getElementById('tb').innerHTML = (parseFloat(T)+parseFloat(L)+parseFloat(H))/3;
+    }
+</script>
+</body>
+</html>
