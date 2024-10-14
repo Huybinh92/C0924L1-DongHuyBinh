@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<div style="width: 700px; background-color: lightgoldenrodyellow; padding: 24px">
+    <h2 style="margin-bottom: 32px">Tính điểm trung bình và tổng</h2>
+    <div style="display: inline-block">
+        <label for="toan" style="display: inline-block; width: 120px; margin-bottom: 4px">Điểm Toán</label><br>
+        <input type="number" id="toan" placeholder="Nhập điểm Toán"
+               style="padding: 8px; margin-bottom: 16px; margin-right: 12px">
+    </div>
+    <div style="display: inline-block">
+        <label for="ly" style="display: inline-block; width: 120px; margin-bottom: 4px">Điểm Lý</label><br>
+        <input type="number" id="ly" placeholder="Nhập điểm Lý"
+               style="padding: 8px; margin-bottom: 16px; margin-right: 12px">
+    </div>
+    <div style="display: inline-block">
+        <label for="hoa" style="display: inline-block; width: 120px; margin-bottom: 4px">Điểm Hóa</label><br>
+        <input type="number" id="hoa" placeholder="Nhập điểm Hóa" style="padding: 8px; margin-bottom: 16px">
+    </div>
+    <button onclick="tinh()"
+            style="background-color: dodgerblue; color: white;padding: 10px; display: inline-block; margin-right: 12px; margin-left: 12px; font-family: Arial, sans-serif; border: none; border-radius: 2px">
+        <strong>Xác nhận</strong></button>
+    <br>
+    <strong id="label1" style="display: inline-block; margin-top: 16px"></strong> <strong id="tb"
+                                                                        style="display: inline-block; color: red"></strong>
+    <br>
+    <strong id="label2" style="display: inline-block"></strong> <strong id="tong"
+                                                                        style="display: inline-block; color: red"></strong>
+</div>
+<div style="width: 700px; background-color: aliceblue; padding: 24px">
+    <h2>Chuyển độ C sang độ F</h2>
+    <input type="number" id="c" style="display: inline-block; padding: 8px; margin-bottom: 16px; margin-right: 8px; width: 80px">
+    <p style="display: inline-block">độ C</p>
+    <button onclick="doi()"
+            style="background-color: dodgerblue; color: white;padding: 10px; display: inline-block; margin-right: 12px; margin-left: 12px; font-family: Arial, sans-serif; border: none; border-radius: 2px">
+        <strong>Đổi</strong></button>
+    <strong id="f" style="display: inline-block; color: red"></strong>
+    <p style="display: inline-block">độ F</p>
+</div>
+<div style="width: 700px; background-color: papayawhip; padding: 24px">
+    <h2>Tính chu vi và diện tích hình tròn</h2>
+    <label for="r" style="display: inline-block; width: 120px; margin-bottom: 4px">Nhập bán kính</label><br>
+    <input type="number" id="r" placeholder="Nhập bán kính" style="display: inline-block; padding: 8px; margin-bottom: 16px; margin-right: 8px; width: 120px">
+    <button onclick="tinhtoan()"
+            style="background-color: dodgerblue; color: white;padding: 10px; display: inline-block; margin-right: 12px; margin-left: 12px; font-family: Arial, sans-serif; border: none; border-radius: 2px">
+        <strong>Tính</strong></button>
+    <br>
+    <strong id="dientich" style="display: inline-block; margin-top: 16px"></strong> <strong id="dt"
+                                                                                          style="display: inline-block; color: red"></strong>
+    <br>
+    <strong id="chuvi" style="display: inline-block"></strong> <strong id="cv"
+                                                                        style="display: inline-block; color: red"></strong>
+</div>
+<script>
+    function tinh() {
+        let toan = parseFloat(document.getElementById('toan').value);
+        let ly = parseFloat(document.getElementById('ly').value);
+        let hoa = parseFloat(document.getElementById('hoa').value);
+        document.getElementById('label1').innerHTML = "Điểm trung bình 3 môn là: ";
+        document.getElementById('tb').innerHTML = (toan + ly + hoa) / 3;
+        document.getElementById('label2').innerHTML = "Tổng điểm 3 môn là: ";
+        document.getElementById('tong').innerHTML = toan + ly + hoa;
+    }
+    function doi() {
+        let do_c = parseFloat(document.getElementById('c').value);
+        document.getElementById('f').innerHTML = do_c*9/5+32;
+    }
+    function tinhtoan() {
+        let ban_kinh = parseFloat(document.getElementById('r').value);
+        const PI = 3.141516;
+        document.getElementById('dientich').innerHTML = "Diện tích hình tròn là: ";
+        document.getElementById('dt').innerHTML = ban_kinh**2*PI;
+        document.getElementById('chuvi').innerHTML = "Chu vi hình tròn là: ";
+        document.getElementById('cv').innerHTML = ban_kinh*2*PI;
+    }
+</script>
+</body>
+</html>
