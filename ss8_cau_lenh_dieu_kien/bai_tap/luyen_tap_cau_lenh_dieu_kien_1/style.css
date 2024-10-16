@@ -1,0 +1,28 @@
+
+h2 {
+    font-family: Arial, sans-serif
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+    margin-right: 8px;
+    width: 120px
+}
+
+button {
+    background-color: dodgerblue;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    margin-right: 12px;
+    margin-left: 12px;
+    font-family: Arial, sans-serif;
+    border: none;
+    border-radius: 2px
+}

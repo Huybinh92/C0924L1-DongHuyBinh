@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh toan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>KIỂM TRA A CHIA HẾT CHO B</h2>
+<form action="#" method="get" onsubmit="tinh()">
+    <div style="display: inline-block">
+        <label for="a">Nhập số a</label>
+        <input type="number" id="a"
+               style="">
+    </div>
+    <div style="display: inline-block">
+        <label for="b">Nhập số b</label>
+        <input type="number" id="b">
+    </div>
+    <button type="submit">
+        Kiểm tra
+    </button>
+</form>
+<strong id="kq" style="color: red"></strong>
+<script>
+    function tinh() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        a % b === 0 ?
+            document.getElementById("kq").innerHTML = a + " chia hết cho " + b
+            : document.getElementById("kq").innerHTML = a + " không chia hết cho " + b;
+    }
+</script>
+</body>
+</html>

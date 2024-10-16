@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số</title>
+</head>
+<body>
+<h2 style="font-family: Arial, sans-serif">KIỂM TRA SỐ LỚN HAY NHỎ HƠN 0</h2>
+<div style="display: inline-block">
+    <label for="so" style="display: block; margin-bottom: 8px">Nhập số bất kỳ</label>
+    <input type="number" id="so"
+           style="padding: 8px; margin-bottom: 16px; margin-right: 8px; width: 120px">
+</div>
+<button onclick="tinh()"
+        style="background-color: dodgerblue; color: white;padding: 10px; display: inline-block; margin-right: 12px; margin-left: 12px; font-family: Arial, sans-serif; border: none; border-radius: 2px">
+    Kiểm tra
+</button>
+<br>
+<strong id="kq" style="color: red"></strong>
+<script>
+    function tinh() {
+        let so = parseFloat(document.getElementById("so").value);
+        if (so < 0) {
+            document.getElementById("kq").innerHTML = so + " nhỏ hơn 0";
+        } else if (so === 0) {
+            document.getElementById("kq").innerHTML = so + " = 0";
+        } else {
+            document.getElementById("kq").innerHTML = so + " lớn hơn 0";
+        }
+    }
+</script>
+</body>
+</html>
