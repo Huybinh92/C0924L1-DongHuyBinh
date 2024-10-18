@@ -7,21 +7,19 @@
 </head>
 <body>
 <h2>KIỂM TRA A CHIA HẾT CHO B</h2>
-<form action="#" method="get" onsubmit="tinh()">
     <div style="display: inline-block">
         <label for="a">Nhập số a</label>
-        <input type="number" id="a"
-               style="">
+        <input type="number" id="a">
     </div>
     <div style="display: inline-block">
         <label for="b">Nhập số b</label>
         <input type="number" id="b">
     </div>
-    <button type="submit">
+    <button onclick="tinh()">
         Kiểm tra
     </button>
-</form>
-<strong id="kq" style="color: red"></strong>
+    <br>
+<h3 id="kq"></h3>
 <script>
     function tinh() {
         let a = parseFloat(document.getElementById("a").value);

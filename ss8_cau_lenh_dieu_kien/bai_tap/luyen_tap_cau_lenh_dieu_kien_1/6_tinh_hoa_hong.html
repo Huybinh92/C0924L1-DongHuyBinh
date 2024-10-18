@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tiền hoa hồng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Tính tiền hoa hồng</h2>
+<div>
+<label for="ds">Nhập doanh số</label>
+<input type="number" id="ds">
+<button onclick="tinh()">
+    Kiểm tra
+</button>
+<h3 id="kq"></h3>
+</div>
+<script>
+    // Doanh số >=100tr => hoa hồng 10%
+    // 100tr > Doanh số >=80tr => hoa hồng 8%
+    // 80tr > Doanh số >=50tr => hoa hồng 5%
+    // Doanh số < 50tr => hoa hồng 2%
+    function tinh() {
+        let doanh_so = parseFloat(document.getElementById("ds").value);
+        if (doanh_so >= 100000000) {
+        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.1;
+    } else if (doanh_so >= 80000000) {
+        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.08;
+    } else if (doanh_so >= 50000000) {
+        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.05;
+    } else {
+        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.02;
+    }
+    }
+</script>
+</body>
+</html>

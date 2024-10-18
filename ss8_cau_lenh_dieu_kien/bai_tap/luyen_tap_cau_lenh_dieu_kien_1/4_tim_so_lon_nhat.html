@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số lớn nhất</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2 style="font-family: Arial, sans-serif">TÌM SỐ LỚN NHẤT</h2>
+<div style="display: inline-block">
+    <label for="a" >Nhập số a</label>
+    <input type="number" id="a">
+</div>
+<div style="display: inline-block">
+    <label for="b" >Nhập số b</label>
+    <input type="number" id="b">
+</div>
+<div style="display: inline-block">
+    <label for="c" >Nhập số c</label>
+    <input type="number" id="c">
+</div>
+<button onclick="tinh()">
+    Tính
+</button>
+<br>
+<h3 id="kq"></h3>
+<script>
+    function tinh() {
+    let a = parseFloat(document.getElementById("a").value);
+    let b = parseFloat(document.getElementById("b").value);
+    let c = parseFloat(document.getElementById("c").value);
+    if (a > b && a > c) {
+        document.getElementById("kq").innerHTML = a + " là số lớn nhất";
+    } else if (b > c) {
+        document.getElementById("kq").innerHTML = b + " là số lớn nhất";
+    } else {
+        document.getElementById("kq").innerHTML = c + " là số lớn nhất";
+    }
+}
+</script>
+</body>
+</html>

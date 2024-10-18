@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Kiểm tra số</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2 style="font-family: Arial, sans-serif">KIỂM TRA SỐ LỚN HAY NHỎ HƠN 0</h2>
+<h2>KIỂM TRA SỐ LỚN HAY NHỎ HƠN 0</h2>
 <div style="display: inline-block">
-    <label for="so" style="display: block; margin-bottom: 8px">Nhập số bất kỳ</label>
-    <input type="number" id="so"
-           style="padding: 8px; margin-bottom: 16px; margin-right: 8px; width: 120px">
+    <label for="so">Nhập số bất kỳ</label>
+    <input type="number" id="so">
 </div>
-<button onclick="tinh()"
-        style="background-color: dodgerblue; color: white;padding: 10px; display: inline-block; margin-right: 12px; margin-left: 12px; font-family: Arial, sans-serif; border: none; border-radius: 2px">
+<button onclick="tinh()">
     Kiểm tra
 </button>
 <br>
-<strong id="kq" style="color: red"></strong>
+<h3 id="kq"></h3>
 <script>
     function tinh() {
         let so = parseFloat(document.getElementById("so").value);

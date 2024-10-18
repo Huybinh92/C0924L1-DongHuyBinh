@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tiền điện</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Tính tiền điện</h2>
+<div>
+<label for="dien">Nhập số điện tiêu thụ</label>
+<input type="number" id="dien">
+<button onclick="tinh()">Tính tiền điện</button>
+<h3 id="kq"></h3>
+</div>
+<script>
+    // 0-50: 1000đ
+    // 51-100:1500đ
+    // 101-150: 2000đ
+    // > 150: 3000đ
+    function tinh() {
+        var number = parseFloat(document.getElementById("dien").value);
+        var money = 0;
+        if (number > 50) {
+            money += 50000;
+            number -= 50;
+            if (number > 50) {
+                money += 75000;
+                number -= 50;
+                if (number > 50) {
+                    money += 100000;
+                    number -= 50;
+                    document.getElementById("kq").innerHTML ="Tiền điện: " + (225000 + number*3000);
+                } else {
+                    document.getElementById("kq").innerHTML ="Tiền điện: " + (125000 + number*2000);
+                }
+            } else {
+                document.getElementById("kq").innerHTML ="Tiền điện: " + (50000 + number*1500);
+            }
+        } else {
+            document.getElementById("kq").innerHTML ="Tiền điện: " + number*1000;
+        }
+    }
+</script>
+</body>
+</html>

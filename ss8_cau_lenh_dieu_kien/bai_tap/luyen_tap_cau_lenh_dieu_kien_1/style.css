@@ -3,6 +3,10 @@ h2 {
     font-family: Arial, sans-serif
 }
 
+h3 {
+    color: red;
+}
+
 label {
     display: block;
     margin-bottom: 8px;
@@ -26,3 +30,4 @@ button {
     border: none;
     border-radius: 2px
 }
+
