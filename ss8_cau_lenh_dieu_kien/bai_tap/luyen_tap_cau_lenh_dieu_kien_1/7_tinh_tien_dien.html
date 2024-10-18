@@ -20,23 +20,12 @@
     // > 150: 3000đ
     function tinh() {
         var number = parseFloat(document.getElementById("dien").value);
-        var money = 0;
-        if (number > 50) {
-            money += 50000;
-            number -= 50;
-            if (number > 50) {
-                money += 75000;
-                number -= 50;
-                if (number > 50) {
-                    money += 100000;
-                    number -= 50;
-                    document.getElementById("kq").innerHTML ="Tiền điện: " + (225000 + number*3000) + " VND";
-                } else {
-                    document.getElementById("kq").innerHTML ="Tiền điện: " + (125000 + number*2000) + " VND";
-                }
-            } else {
-                document.getElementById("kq").innerHTML ="Tiền điện: " + (50000 + number*1500) + " VND";
-            }
+        if (number>150) {
+            document.getElementById("kq").innerHTML ="Tiền điện: " + (225000 + (number-150)*3000) + " VND";
+        } else if (number>100) {
+            document.getElementById("kq").innerHTML ="Tiền điện: " + (125000 + (number-100)*2000) + " VND";
+        } else if (number>50) {
+            document.getElementById("kq").innerHTML ="Tiền điện: " + (50000 + (number-50)*1500) + " VND";
         } else {
             document.getElementById("kq").innerHTML ="Tiền điện: " + number*1000 + " VND";
         }
