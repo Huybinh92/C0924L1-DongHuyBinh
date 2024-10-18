@@ -23,13 +23,13 @@
     function tinh() {
         let doanh_so = parseFloat(document.getElementById("ds").value);
         if (doanh_so >= 100000000) {
-        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.1;
+        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.1 + " VND";
     } else if (doanh_so >= 80000000) {
-        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.08;
+        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.08 + " VND";
     } else if (doanh_so >= 50000000) {
-        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.05;
+        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.05 + " VND";
     } else {
-        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.02;
+        document.getElementById("kq").innerHTML ="Hoa hồng của bạn: " + doanh_so*0.02 + " VND";
     }
     }
 </script>
