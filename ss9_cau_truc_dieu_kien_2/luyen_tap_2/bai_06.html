@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>GIẢI PHƯƠNG TRÌNH BẬC 1</h2>
+<div style="display: inline-block">
+    <p>Nhập các số của phương trình: </p>
+    <input type="number" id="a" style="width: 40px; margin-right: 4px">
+    <h3 style="display: inline-block; color: black; font-family: Arial; margin-right: 8px">x </h3>
+    <p style="display: inline-block; margin-right: 8px"> + </p>
+    <input type="number" id="b" style="width: 40px">
+    <p style="display: inline-block; margin-right: 8px"> = <strong style="font-family: Arial">0</strong></p>
+</div>
+<button onclick="giaiPT()">
+    Giải phương trình
+</button>
+<br>
+<h3 id="kq"></h3>
+<script>
+    function giaiPT() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        (a === 0) ?
+            document.getElementById("kq").innerHTML = "số a phải # 0" :
+            document.getElementById("kq").innerHTML = "x = " + (0 - b) / a;
+    }
+</script>
+</body>
+</html>
