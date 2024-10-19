@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>KIỂM TRA 3 SỐ CÓ PHẢI CẠNH CỦA 1 TAM GIÁC</h2>
+<div style="display: inline-block">
+  <label for="a">Nhập cạnh a</label>
+  <input type="number" id="a">
+</div>
+<div style="display: inline-block">
+  <label for="b">Nhập cạnh b</label>
+  <input type="number" id="b">
+</div>
+<div style="display: inline-block">
+  <label for="c">Nhập cạnh c</label>
+  <input type="number" id="c">
+</div>
+<button onclick="check()">
+  Kiểm tra
+</button>
+<br>
+<h3 id="kq"></h3>
+<script>
+  // a,b,c > 0
+  // a + b > c
+  // b + c > a
+  // a + c > b
+  function check() {
+    let a = parseFloat(document.getElementById("a").value);
+    let b = parseFloat(document.getElementById("b").value);
+    let c = parseFloat(document.getElementById("c").value);
+    if (a>0 && b>0 && c>0) {
+      if (a+b>c && a+c>b && b+c>a) {
+        document.getElementById("kq").innerHTML = "3 số trên là cạnh của 1 tam giác";
+      } else {
+        document.getElementById("kq").innerHTML = "3 số trên không phải là cạnh của 1 tam giác";
+      }
+    } else {
+      document.getElementById("kq").innerHTML = "3 số trên không phải là cạnh của 1 tam giác";
+    }
+  }
+</script>
+</body>
+</html>

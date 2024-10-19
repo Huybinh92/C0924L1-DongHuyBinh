@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>CHUYỂN ĐỘ C SANG ĐỘ F</h2>
+<div style="display: inline-block">
+    <label for="do">Nhập nhiệt độ</label>
+    <input type="number" id="do">
+    <select name="type" id="type">
+        <option value="C">C</option>
+        <option value="F">F</option>
+    </select>
+</div>
+<button onclick="convert()">
+    Quy đổi
+</button>
+<br>
+<h3 id="kq"></h3>
+<script>
+    const type = document.getElementById("type");
+    function convert() {
+        let $do = parseFloat(document.getElementById("do").value);
+        let value;
+        if (type.value === 'C') {
+            // TODO: convert f to c
+            value = $do * 9 / 5 + 32;
+            document.getElementById('kq').innerHTML = $do + " độ C = " + value + " độ F";
+        } else {
+            // TODO: convert c to f
+            value = ($do - 32) * 5 / 9;
+            document.getElementById('kq').innerHTML = $do + " độ F = " + value + " độ C";
+        }
+    }
+</script>
+</body>
+</html>
