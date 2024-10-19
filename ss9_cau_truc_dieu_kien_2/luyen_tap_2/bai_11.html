@@ -17,19 +17,19 @@
     function tinh() {
         let income = parseFloat(document.getElementById("tn").value);
         if (income > 8e7) {
-            document.getElementById("kq").innerHTML ="Thuế TNCN: " + (income*0.35 - 9.85e6) + " VND";
-        } else if (income>52e6) {
-            document.getElementById("kq").innerHTML ="Thuế TNCN: " + (income*0.3 - 5.85e6) + " VND";
-        } else if (income>32e6) {
-            document.getElementById("kq").innerHTML ="Thuế TNCN: " + (income*0.25 - 3.25e6) + " VND";
-        } else if (income>18e6) {
-            document.getElementById("kq").innerHTML ="Thuế TNCN: " + (income*0.2 - 1.65e6) + " VND";
-        } else if (income>1e7) {
-            document.getElementById("kq").innerHTML ="Thuế TNCN: " + (income*0.15 - 0.75e6) + " VND";
-        } else if (income>5e6) {
-            document.getElementById("kq").innerHTML ="Thuế TNCN: " + (income*0.1 - 0.25e6) + " VND";
+            document.getElementById("kq").innerHTML = "Thuế TNCN: " + (income * 0.35 - 9.85e6) + " VND";
+        } else if (income > 52e6) {
+            document.getElementById("kq").innerHTML = "Thuế TNCN: " + (income * 0.3 - 5.85e6) + " VND";
+        } else if (income > 32e6) {
+            document.getElementById("kq").innerHTML = "Thuế TNCN: " + (income * 0.25 - 3.25e6) + " VND";
+        } else if (income > 18e6) {
+            document.getElementById("kq").innerHTML = "Thuế TNCN: " + (income * 0.2 - 1.65e6) + " VND";
+        } else if (income > 1e7) {
+            document.getElementById("kq").innerHTML = "Thuế TNCN: " + (income * 0.15 - 0.75e6) + " VND";
+        } else if (income > 5e6) {
+            document.getElementById("kq").innerHTML = "Thuế TNCN: " + (income * 0.1 - 0.25e6) + " VND";
         } else {
-            document.getElementById("kq").innerHTML ="Thuế TNCN: " + income*0.05 + " VND";
+            document.getElementById("kq").innerHTML = "Thuế TNCN: " + income * 0.05 + " VND";
         }
     }
 </script>

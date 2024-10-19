@@ -34,7 +34,7 @@
   let money = parseFloat(document.getElementById("money").value);
   let month = parseFloat(document.getElementById("month").value);
   let rate = parseFloat(document.getElementById("rate").value)/100/12;
-  document.getElementById("kq").innerHTML = "Số tiền lãi sau " + month + " tháng là: " + ((money + money*rate)*((1 + rate)**(month - 1)) - money);
+    document.getElementById("kq").innerHTML = "Số tiền lãi sau " + month + " tháng là: " + ((money + money * rate) * ((1 + rate) ** (month - 1)) - money);
   }
 </script>
 </body>
