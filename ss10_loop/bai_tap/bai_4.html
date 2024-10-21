@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+    while (b % 5 != 0) {
+        b += a;
+        a = b - a;
+    }
+    console.log("Số đầu tiên trong dãy Fibonacci chia hết cho 5 là: " + b);
+</script>
+</body>
+</html>

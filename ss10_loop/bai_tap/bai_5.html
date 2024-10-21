@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+    let sum = a;
+    for (let i = 2; i <= 20; i++) {
+        sum += b;
+        b += a;
+        a = b - a;
+    }
+    console.log("Tổng 20 số đầu tiên của dãy Fibonacci là: " + sum);
+</script>
+</body>
+</html>
