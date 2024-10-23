@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Game đoán số</h2>
+<button onclick=play()>Bắt đầu</button>
+<script>
+    function getRandom(min,max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+     }
+    function play() {
+        let min = +prompt("Nhập giới hạn dưới");
+        let max = +prompt("Nhập giới hạn trên");
+        let randomNumber = getRandom(min, max);
+        let result = false;
+        let choice = +prompt("Nhập số bạn đoán");
+        while (result == false){
+        if (choice === randomNumber) {
+            alert("Chúc mừng bạn đã đoán đúng");
+            result = true;
+        } else if(choice > randomNumber) {
+            choice = +prompt("Số bạn chọn lớn hơn, vui lòng chọn lại");
+        } else {
+            choice = +prompt("Số bạn chọn nhỏ hơn, vui lòng chọn lại");
+        }
+        }
+    }
+</script>
+</body>
+</html>
