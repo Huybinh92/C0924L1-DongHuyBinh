@@ -12,14 +12,16 @@
     let total = 0;
     let string = "";
     while  (total < 20) {
-        for (let i = 2; i <= number; i++) {
-            if (i == number) {
+        let count = 0;
+        for (let i = 2; i < number; i++) {
+            if (number % i == 0) {
+                count++;
+            }
+        } 
+        if (count == 0) {
                 string += number + ", ";
                 total++;
-            } else if (number % i == 0) {
-                break;
-                }
-        } 
+            }
         number++;
     }
     document.getElementById("string").innerHTML = string;
