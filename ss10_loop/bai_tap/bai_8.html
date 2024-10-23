@@ -12,9 +12,23 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
      }
     function play() {
-        let min = +prompt("Nhập giới hạn dưới");
-        let max = +prompt("Nhập giới hạn trên");
-        let randomNumber = getRandom(min, max);
+        let min = prompt("Nhập giới hạn dưới");
+        let numberMin = parseFloat(min);
+        while (min =="" || isNaN(numberMin)) {
+            min = prompt("Không hợp lệ, vui lòng nhập giới hạn dưới");
+            numberMin = parseFloat(min);
+        }
+        let max = prompt("Nhập giới hạn trên");
+        let numberMax = parseFloat(max);
+        while (max =="" || isNaN(numberMax)) {
+            max = prompt("Không hợp lệ, vui lòng nhập số giới hạn trên");
+            numberMax = parseFloat(max);
+            if (numberMax <= numberMin) {
+                max = prompt("Giới hạn trên cần lớn hơn" + numberMin + ", vui lòng nhập giới hạn trên");
+                numberMax = parseFloat(max);
+            }
+        }
+        let randomNumber = getRandom(numberMin, numberMax);
         let result = false;
         let choice = +prompt("Nhập số bạn đoán");
         while (result == false){
