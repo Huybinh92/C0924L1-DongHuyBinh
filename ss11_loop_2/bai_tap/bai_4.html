@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Nhập chiều dài và chiều rộng
+
+    let width = prompt("Nhập chiều dài");
+    let numberWidth = parseFloat(width);
+    while (width == "" || isNaN(numberWidth) || numberWidth < 2) {
+        width = prompt("Phải nhập số lớn hơn 1, vui lòng nhập lại");
+        numberWidth = parseFloat(width);
+    }
+    let height = prompt("Nhập chiều rộng");
+    let numberHeight = parseFloat(height);
+    while (height == "" || isNaN(numberHeight) || numberHeight < 2) {
+        height = prompt("Phải nhập số lớn hơn 1, vui lòng nhập lại");
+        numberHeight = parseFloat(height);
+    }
+    let rectangle ="";
+    for (let i = 1; i <= numberHeight; i++) {
+        let draw = "<h4>";
+        if (i == 1 || i == numberHeight) {
+            for (let j = 1; j <= numberWidth; j++) {
+                draw += "*";
+            }
+            draw += "</h4>";
+        } else {
+            for (let j = 1; j <= numberWidth; j++) {
+                if (j == 1 || j == numberWidth) {
+                    draw += "*";
+                } else {
+                    draw += "&nbsp&nbsp";
+                }
+            }
+            draw += "</h4>";
+        }
+        rectangle += draw;
+    }
+    document.write(rectangle);
+
+</script>
+</body>
+</html>

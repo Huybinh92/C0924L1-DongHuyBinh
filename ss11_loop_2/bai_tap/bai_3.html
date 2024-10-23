@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Nhập chiều dài canh góc vuông
+
+    let input = prompt("Nhập độ dài cạnh góc vuông");
+    let number = parseFloat(input);
+    while (input =="" || isNaN(number) || number < 2) {
+        input = prompt("Phải nhập số lớn hơn 1, vui lòng nhập lại");
+        number = parseFloat(input);
+    }
+
+    // Tạo tam giác
+
+    let triangle = "";
+    for (let i = 1; i <= number ; i++) {
+        triangle += "<strong>";
+        for (let j = 1; j <= i ; j++) {
+            triangle += "*";
+        }
+        triangle += "<br>";
+    }
+    let triangle1 = "<br><div style='display: inline-block;'>" + triangle + "</div><br>";
+    let triangle2 = "<br><div style='display: inline-block; transform: rotate(90deg)'>" + triangle + "</div><br>";
+    let triangle3 = "<br><div style='display: inline-block; transform: rotate(180deg)'>" + triangle + "</div><br>";
+    let triangle4 = "<br><div style='display: inline-block; transform: rotate(270deg)'>" + triangle + "</div><br>";
+    document.write("<div style='margin: 40px'>" + triangle1 + triangle2 + triangle3 + triangle4 + "</div>");
+</script>
+</body>
+</html>

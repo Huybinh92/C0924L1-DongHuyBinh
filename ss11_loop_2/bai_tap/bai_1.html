@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let count = +prompt("Nhập số lượng số cần in ra trong dãy Fibonacci");
+  let a = 0;
+  let b = 1;
+  document.write(count + " số đầu tiên trong dãy Fibonacci là: ");
+  document.write(a + ", ");
+  for (let i = 2; i <= count; i++) {
+    document.write(b + ", ");
+    b += a;
+    a = b - a;
+  }
+</script>
+</body>
+</html>
