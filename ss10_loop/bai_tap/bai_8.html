@@ -30,17 +30,20 @@
         }
         let randomNumber = getRandom(numberMin, numberMax);
         let result = false;
+        let count = 1;
         let choice = +prompt("Nhập số bạn đoán");
-        while (result == false){
-        if (choice === randomNumber) {
-            alert("Chúc mừng bạn đã đoán đúng");
-            result = true;
-        } else if(choice > randomNumber) {
-            choice = +prompt("Số bạn chọn lớn hơn, vui lòng chọn lại");
-        } else {
-            choice = +prompt("Số bạn chọn nhỏ hơn, vui lòng chọn lại");
+        while (result == false && count <3){
+            count ++;
+            if (choice === randomNumber) {
+              alert("Chúc mừng bạn đã đoán đúng");
+              result = true;
+            } else if(choice > randomNumber) {
+                choice = +prompt("Số bạn chọn lớn hơn, vui lòng chọn lại");
+                } else {
+                    choice = +prompt("Số bạn chọn nhỏ hơn, vui lòng chọn lại");
+                    }
         }
-        }
+        alert("Bạn đã hết lượt chơi!");
     }
 </script>
 </body>
