@@ -10,18 +10,18 @@
     // Nhập chiều dài canh góc vuông
 
     let input = prompt("Nhập độ dài cạnh góc vuông");
-    let number = parseFloat(input);
-    while (input =="" || isNaN(number) || number < 2) {
+    let number = parseInt(input);
+    while (input == "" || isNaN(number) || number < 2) {
         input = prompt("Phải nhập số lớn hơn 1, vui lòng nhập lại");
-        number = parseFloat(input);
+        number = parseInt(input);
     }
 
     // Tạo tam giác
 
     let triangle = "";
-    for (let i = 1; i <= number ; i++) {
+    for (let i = 1; i <= number; i++) {
         triangle += "<strong>";
-        for (let j = 1; j <= i ; j++) {
+        for (let j = 1; j <= i; j++) {
             triangle += "*";
         }
         triangle += "<br>";

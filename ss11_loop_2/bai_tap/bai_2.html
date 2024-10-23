@@ -6,17 +6,17 @@
 </head>
 <body>
 <script>
-  let input = prompt("Nhập số bất kỳ");
-  let number = parseFloat(input);
-  while (input =="" || isNaN(number) || number < 0) {
-    input = prompt("Không hợp lệ, vui lòng nhập lại số bất kỳ");
-    number = parseFloat(input);
-  }
-  let result = 1;
-  for (let i = 1; i <=number ; i++) {
-    result = result * i;
-  }
-  document.write(number + "! = " + result);
+    let input = prompt("Nhập số bất kỳ");
+    let number = parseInt(input);
+    while (input == "" || isNaN(number) || number < 0) {
+        input = prompt("Không hợp lệ, vui lòng nhập lại số bất kỳ");
+        number = parseInt(input);
+    }
+    let result = 1;
+    for (let i = 1; i <= number; i++) {
+        result = result * i;
+    }
+    document.write(number + "! = " + result);
 </script>
 </body>
 </html>
