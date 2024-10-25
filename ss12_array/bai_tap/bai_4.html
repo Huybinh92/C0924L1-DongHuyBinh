@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = new Array(+prompt("Nhập số lượng phần tử"));
+    let reverse = new Array(numbers.length);
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i] = +prompt("Nhập phần tử thứ " + (i + 1));
+        reverse[reverse.length - i - 1] = numbers[i];
+    }
+    alert(reverse);
+</script>
+</body>
+</html>

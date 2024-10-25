@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers1 = new Array(10);
+    let numbers2 = new Array(10);
+    let numbers3 = [];
+    for (let i = 0; i < numbers1.length; i++) {
+        numbers1[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " của mảng 1");
+        numbers3.push(numbers1[i]);
+    }
+    for (let i = 0; i < numbers2.length; i++) {
+        numbers2[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " của mảng 2");
+        numbers3.push(numbers2[i]);
+    }
+    alert(numbers3);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = new Array(+prompt("Nhập số lượng phần tử"));
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i] = +prompt("Nhập phần tử thứ " + (i + 1));
+    }
+    let count = 0;
+    let result = [];
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] < 0) {
+            count++
+            result.push(numbers[i]);
+        }
+    }
+    alert("Có " + count + " phần tử là số nguyên âm: " + result);
+</script>
+</body>
+</html>

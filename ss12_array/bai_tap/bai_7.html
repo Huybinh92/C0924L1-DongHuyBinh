@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = new Array(10);
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i] = +prompt("Nhập phần tử thứ " + (i + 1));
+    }
+    let check = +prompt("Nhập số nguyên bất kỳ ");
+    let count = 0;
+    for (let j = 0; j < numbers.length; j++) {
+        if (check === numbers[j]) {
+            numbers.splice(j, 1);
+            count++;
+            j--;
+        }
+    }
+    for (let i = 1; i <= count; i++) {
+        numbers.push(0);
+    }
+    alert(numbers);
+</script>
+</body>
+</html>

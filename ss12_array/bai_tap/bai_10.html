@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Từ điển Anh - Việt</h3>
+<input id="eng" placeholder="Nhập từ tiếng Anh">
+<button onclick="trans()">Dịch</button>
+<h4 id="result"></h4>
+<script>
+    let english = ["apple", "banana", "tree", "dog", "cat"];
+    let vietnam = ["quả táo", "quả chuối", "cái cây", "con chó", "con mèo"];
+
+    function trans() {
+        let eng = document.getElementById("eng").value;
+        let count = 0;
+        for (let i = 0; i < english.length; i++) {
+            if (eng == english[i]) {
+                count = i;
+                document.getElementById("result").innerHTML = eng + " có nghĩa là " + vietnam[count];
+                break;
+            } else {
+                document.getElementById("result").innerHTML = "Không tìm thấy kết quả";
+            }
+        }
+    }
+</script>
+</body>
+</html>

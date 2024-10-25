@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = new Array(10);
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i] = +prompt("Nhập phần tử thứ " + (i + 1));
+    }
+    let check = +prompt("Nhập số nguyên bất kỳ ");
+    let result = false;
+    for (let j = 0; j < numbers.length; j++) {
+        if (check === numbers[j]) {
+            result = true;
+            break;
+        }
+    }
+    if (result == true) {
+        alert(check + " is in the array");
+    } else {
+        alert(check + " is not in the array");
+    }</script>
+</body>
+</html>
