@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = new Array(+prompt("Nhập số phần tử của mảng"));
+    for (let i = 0; i < array.length; i++) {
+        array[i] = prompt("Nhập phần tử thứ " + (i + 1));
+    }
+    for (let i = 0; i < array.length; i++) {
+        array[i] = array[i].replace(/-/g, '_');
+    }
+    alert(array);
+</script>
+</body>
+</html>

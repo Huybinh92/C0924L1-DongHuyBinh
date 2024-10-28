@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = ['c', 's', 4, '2', 6, '1'];
+    let count = array.length;
+    for (let i = 0; i < array.length; i++) {
+        if (isNaN(array[i])) {
+            count--;
+        }
+    }
+    alert("có " + count + " ký tự số");
+</script>
+</body>
+</html>

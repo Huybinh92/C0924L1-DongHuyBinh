@@ -16,15 +16,17 @@
 
     function trans() {
         let eng = document.getElementById("eng").value;
-        let count = 0;
+        eng = eng.toLowerCase();
+        let flag = true;
         for (let i = 0; i < english.length; i++) {
             if (eng == english[i]) {
-                count = i;
-                document.getElementById("result").innerHTML = eng + " có nghĩa là " + vietnam[count];
+                document.getElementById("result").innerHTML = eng + " có nghĩa là " + vietnam[i];
+                flag = false;
                 break;
-            } else {
-                document.getElementById("result").innerHTML = "Không tìm thấy kết quả";
             }
+        }
+        if (flag == true) {
+            document.getElementById("result").innerHTML = "Không tìm thấy kết quả";
         }
     }
 </script>

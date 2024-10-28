@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string = prompt("nhập một câu bất kỳ");
+
+    function isLetter(char) {
+        return /^[a-zA-Z]$/.test(char);
+    }
+
+    let count = 0;
+    for (let i = 0; i < string.length; i++) {
+        if (count == 0 && isLetter(string[i])) {
+            count++;
+        } else {
+            if (!isLetter(string[i]) && isLetter(string[i + 1])) {
+                count++;
+            }
+        }
+    }
+    alert(count);
+</script>
+</body>
+</html>
