@@ -8,21 +8,9 @@
 <script>
     let string1 = prompt("Nhập chuỗi thứ nhất");
     let string2 = prompt("Nhập chuỗi thứ hai");
-    if (string1.length == string2.length) {
-        let check = true;
-        for (let i = 0; i < string1.length; i++) {
-            if (string1[i] != string2[i]) {
-                alert("2 chuỗi không giống nhau")
-                check = false;
-                break;
-            }
-        }
-        if (check == true) {
-            alert("2 chuỗi giống nhau")
-        }
-    } else {
+    (string1 === string2) ?
+        alert("2 chuỗi giống nhau") :
         alert("2 chuỗi không giống nhau")
-    }
 </script>
 </body>
 </html>
