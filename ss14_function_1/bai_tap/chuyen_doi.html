@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="foot1" style="display: inline-block">
+<p style="display: inline-block">foot</p>
+<button onclick="footToMeter()" style="display: inline-block">=</button>
+<p id="metter1" style="display: inline-block"></p>
+<p style="display: inline-block">metter</p>
+<br>
+<input id="metter2" style="display: inline-block">
+<p style="display: inline-block">metter</p>
+<button onclick="meterToFoot()" style="display: inline-block">=</button>
+<p id="foot2" style="display: inline-block"></p>
+<p style="display: inline-block">foot</p>
+<script>
+    function footToMeter() {
+        let foot = document.getElementById("foot1").value;
+        document.getElementById("metter1").innerHTML = 0.305 * foot;
+    }
+
+    function meterToFoot() {
+        let metter = document.getElementById("metter2").value;
+        document.getElementById("foot2").innerHTML = 3.279 * metter;
+    }
+</script>
+</body>
+</html>
