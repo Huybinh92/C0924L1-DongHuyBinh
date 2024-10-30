@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="check()">
+<script>
+    function isPrime(number) {
+        for (let i = 2; i <= number; i++) {
+            if (i == number) {
+                return true;
+            } else if (number % i == 0) {
+                return false;
+            }
+        }
+    }
+
+    function check() {
+        let max = +prompt("Nhập giới hạn cần tìm");
+        let number = 2;
+        let string = "";
+        while (number < max) {
+            if (isPrime(number)) {
+                string += number + ", ";
+            }
+            number++;
+        }
+        document.write("Các số nguyên tố nhỏ hơn " + max + " là: " + string);
+    }
+</script>
+</body>
+</html>

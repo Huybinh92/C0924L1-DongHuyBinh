@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="display()">
+<script>
+    function check(a, b) {
+        (a > b) ?
+            alert(a + " > " + b) :
+            alert(a + " + " + b + " = " + (a + b));
+    }
+
+    function display() {
+        let num1 = +prompt("Nhập số thứ nhất");
+        let num2 = +prompt("Nhập số thứ 2");
+        check(num1, num2);
+    }
+</script>
+</body>
+</html>
