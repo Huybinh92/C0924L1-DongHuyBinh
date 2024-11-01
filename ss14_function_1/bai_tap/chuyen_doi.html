@@ -7,24 +7,32 @@
 <body>
 <input id="foot1" style="display: inline-block">
 <p style="display: inline-block">foot</p>
-<button onclick="footToMeter()" style="display: inline-block">=</button>
+<button onclick="footConvert()" style="display: inline-block">=</button>
 <p id="metter1" style="display: inline-block"></p>
 <p style="display: inline-block">metter</p>
 <br>
 <input id="metter2" style="display: inline-block">
 <p style="display: inline-block">metter</p>
-<button onclick="meterToFoot()" style="display: inline-block">=</button>
+<button onclick="metterConvert()" style="display: inline-block">=</button>
 <p id="foot2" style="display: inline-block"></p>
 <p style="display: inline-block">foot</p>
 <script>
-    function footToMeter() {
-        let foot = document.getElementById("foot1").value;
-        document.getElementById("metter1").innerHTML = 0.305 * foot;
+    function footToMeter(foot) {
+        return 0.305 * foot;
     }
 
-    function meterToFoot() {
+    function meterToFoot(metter) {
+        return 3.279 * metter;
+    }
+
+    function footConvert() {
+        let foot = document.getElementById("foot1").value;
+        document.getElementById("metter1").innerHTML = footToMeter(foot);
+    }
+
+    function metterConvert() {
         let metter = document.getElementById("metter2").value;
-        document.getElementById("foot2").innerHTML = 3.279 * metter;
+        document.getElementById("foot2").innerHTML = meterToFoot(metter);
     }
 </script>
 </body>
