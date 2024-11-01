@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function reverse(array) {
+        let reverseArray = [];
+        for (let i = array.length - 1; i >= 0; i--) {
+            reverseArray.push(array[i]);
+        }
+        return reverseArray;
+    }
+
+    let array = [];
+    let soLuong = +prompt(` Nhập số lương phần tử`);
+    for (let i = 1; i <= soLuong; i++) {
+        array.push(prompt(` Nhập phần tử thứ ${i}`));
+    }
+    alert(` mảng đảo ngược là: ${reverse(array)}`);
+</script>
+</body>
+</html>

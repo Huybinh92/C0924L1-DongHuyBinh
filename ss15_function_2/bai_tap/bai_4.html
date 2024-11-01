@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkNumber(a) {
+        if (isNaN(a) || a == '') {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    let char = prompt(` Nhập ký tự bất kỳ`)
+    if (checkNumber(char)) {
+        alert(`"${char}" là ký tự số`);
+    } else {
+        alert(`"${char}" không phải là ký tự số`);
+    }
+</script>
+</body>
+</html>

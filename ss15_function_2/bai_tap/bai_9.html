@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = ['a', 'b', 'c', 'a', 'd', 'a'];
+    let char = prompt(` Nhập ký tự bất kỳ trong 4 ký tự: a,b,c,d`);
+    alert(check(char, array));
+
+    function check(a, array) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (a == array[i]) {
+                count++;
+            }
+        }
+        return (count > 0) ? count : -1;
+    }
+</script>
+</body>
+</html>

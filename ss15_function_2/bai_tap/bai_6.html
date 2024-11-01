@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkNumber(a) {
+        if (a >= 0 && a % 1 === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    let num = +prompt(` Nhập số bất kỳ`);
+    if (checkNumber(num)) {
+        alert(`${num} là số nguyên dương`);
+    } else {
+        alert(`${num} không phải là số nguyên dương`);
+
+    }
+</script>
+</body>
+</html>
