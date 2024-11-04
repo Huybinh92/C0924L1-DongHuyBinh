@@ -6,6 +6,10 @@
 </head>
 <body>
 <canvas id="rectangle"></canvas>
+<br>
+<button onclick="change()">Thay đổi kích thước hình chữ nhật</button>
+<p id="area"></p>
+<p id="perimeter"></p>
 <script>
     class Rectangle {
         constructor(width, height) {
@@ -39,14 +43,22 @@
     }
 
     let rectangle1 = new Rectangle(200, 100);
-    var canvas = document.getElementById("rectangle");
-    var ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#FF0000";
+    let canvas = document.getElementById("rectangle");
+    let ctx = canvas.getContext("2d");
+    ctx.fillStyle = "dodgerblue";
     ctx.fillRect(0, 0, rectangle1.getWidth(), rectangle1.getHeight());
-    rectangle1.setWidth(40);
-    rectangle1.setHeight(20);
-    console.log("Diện tích hình chữ nhật là: " + rectangle1.getArea());
-    console.log("Chu vi hình chữ nhật là: " + rectangle1.getPerimeter());
+
+    function change() {
+        rectangle1.setWidth(+prompt("Nhập chiều dài"));
+        rectangle1.setHeight(+prompt("Nhập chiều rộng"));
+        document.getElementById("area").innerHTML = "Diện tích hình chữ nhật là: " + rectangle1.getArea();
+        document.getElementById("perimeter").innerHTML = "Chu vi hình chữ nhật là: " + rectangle1.getPerimeter();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.width = rectangle1.getWidth();
+        canvas.height = rectangle1.getHeight();
+        ctx.fillStyle = "dodgerblue";
+        ctx.fillRect(0, 0, rectangle1.getWidth(), rectangle1.getHeight());
+    }
 </script>
 </body>
 </html>
