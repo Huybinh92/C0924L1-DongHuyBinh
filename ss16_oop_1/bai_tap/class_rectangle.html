@@ -11,6 +11,9 @@
 <p id="area"></p>
 <p id="perimeter"></p>
 <script>
+    let canvas = document.getElementById("rectangle");
+    let ctx = canvas.getContext("2d");
+
     class Rectangle {
         constructor(width, height) {
             this.width = width;
@@ -42,10 +45,6 @@
         }
 
         draw() {
-            let canvas = document.getElementById("rectangle");
-            canvas.width = rectangle1.getWidth();
-            canvas.height = rectangle1.getHeight();
-            let ctx = canvas.getContext("2d");
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             canvas.width = rectangle1.getWidth();
             canvas.height = rectangle1.getHeight();
