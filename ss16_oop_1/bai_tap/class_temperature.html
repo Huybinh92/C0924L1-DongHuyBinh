@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(value) {
+            this.value = value;
+        }
+
+        getF() {
+            return (this.value * 9 / 5) + 32;
+        }
+
+        getK() {
+            return this.value + 273.15;
+        }
+    }
+
+    let celcius = new Temperature(25);
+    console.log("Độ F tương ứng là: " + celcius.getF());
+    console.log("Độ K tương ứng là: " + celcius.getK());
+</script>
+</body>
+</html>
