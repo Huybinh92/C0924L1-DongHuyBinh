@@ -40,26 +40,29 @@
         setHeight(height) {
             this.height = height;
         }
+
+        draw() {
+            let canvas = document.getElementById("rectangle");
+            canvas.width = rectangle1.getWidth();
+            canvas.height = rectangle1.getHeight();
+            let ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.width = rectangle1.getWidth();
+            canvas.height = rectangle1.getHeight();
+            ctx.fillStyle = "dodgerblue";
+            ctx.fillRect(0, 0, rectangle1.getWidth(), rectangle1.getHeight());
+        }
     }
 
     let rectangle1 = new Rectangle(200, 100);
-    let canvas = document.getElementById("rectangle");
-    canvas.width = rectangle1.getWidth();
-    canvas.height = rectangle1.getHeight();
-    let ctx = canvas.getContext("2d");
-    ctx.fillStyle = "dodgerblue";
-    ctx.fillRect(0, 0, rectangle1.getWidth(), rectangle1.getHeight());
+    rectangle1.draw();
 
     function change() {
         rectangle1.setWidth(+prompt("Nhập chiều dài"));
         rectangle1.setHeight(+prompt("Nhập chiều rộng"));
         document.getElementById("area").innerHTML = "Diện tích hình chữ nhật là: " + rectangle1.getArea();
         document.getElementById("perimeter").innerHTML = "Chu vi hình chữ nhật là: " + rectangle1.getPerimeter();
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        canvas.width = rectangle1.getWidth();
-        canvas.height = rectangle1.getHeight();
-        ctx.fillStyle = "dodgerblue";
-        ctx.fillRect(0, 0, rectangle1.getWidth(), rectangle1.getHeight());
+        rectangle1.draw();
     }
 </script>
 </body>
