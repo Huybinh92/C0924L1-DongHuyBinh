@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+<div id="lamp" style="width: 200px; height: 200px; background-color: gray; text-align: center">Bóng đèn</div>
+<button onclick="turnLight(lamp1, switch1)">Công tắc</button>
 <script>
     class Lamp {
         constructor(status) {
@@ -35,11 +37,17 @@
 
     let lamp1 = new Lamp(false);
     let switch1 = new Switch(false, lamp1);
-    for (let i = 1; i <= 5; i++) {
-        console.log("Công tắc: " + switch1.switchOn());
-        console.log("Bóng đèn: " + lamp1.getStatus());
-        console.log("Công tắc: " + switch1.switchOff());
-        console.log("Bóng đèn: " + lamp1.getStatus());
+
+    function turnLight(lamp1, switch1) {
+        if (lamp1.status == true) {
+            document.getElementById("lamp").style.backgroundColor = "gray";
+            console.log("Công tắc: " + switch1.switchOff());
+            console.log("Bóng đèn: " + lamp1.getStatus());
+        } else {
+            document.getElementById("lamp").style.backgroundColor = "yellow";
+            console.log("Công tắc: " + switch1.switchOn());
+            console.log("Bóng đèn: " + lamp1.getStatus());
+        }
     }
 </script>
 </body>
