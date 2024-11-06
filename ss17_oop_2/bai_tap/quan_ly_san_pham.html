@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Quản lý nhân viên</h3>
+<input id="id" placeholder="Nhập mã sản phẩm">
+<input id="name" placeholder="Nhập tên sản phẩm">
+<input id="price" placeholder="Nhập giá sản phẩm">
+<button onclick="addNew()">Thêm mới</button>
+<div id="save"></div>
+<br>
+<span>Số lượng sản phẩm:</span><span id="soLuong"></span>
+<table id="table" border="1" style="border-collapse: collapse">
+
+</table>
+
+
+<script>
+    class Product {
+        constructor(id, name, price) {
+            this.id = id;
+            this.name = name;
+            this.price = price;
+        }
+    }
+
+    let product1 = new Product("001", "Samsung", 1000);
+    let product2 = new Product("002", "Nokia", 500);
+    let product3 = new Product("003", "Xiaomi", 800);
+    let products = [product1, product2, product3];
+
+    table();
+
+    function table() {
+        let tableString = `<tr>
+                             <th>STT</th>
+                             <th>Mã sản phẩm</th>
+                             <th>Tên sản phẩm</th>
+                             <th>Giá</th>
+                             <th colspan="2">Hành động</th>
+                           </tr>`;
+        for (let i = 0; i < products.length; i++) {
+            tableString += `<tr>
+                               <td>${i + 1}</td>
+                               <td>${products[i].id}</td>
+                               <td>${products[i].name}</td>
+                               <td>${products[i].price}</td>
+                               <td><button onclick="edit(${i})">Sửa</button></td>
+                               <td><button onclick="remove(${i})">Xóa</button></td>
+                             </tr>`;
+        }
+        document.getElementById("table").innerHTML = tableString;
+        document.getElementById("soLuong").innerHTML = products.length;
+    }
+
+    function addNew() {
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let price = document.getElementById("price").value;
+        if (id != '' && name != '' && price != '') {
+            let newProduct = new Product(id, name, price);
+            products.push(newProduct);
+            table();
+            document.getElementById("id").value = '';
+            document.getElementById("name").value = '';
+            document.getElementById("price").value = '';
+        } else {
+            alert("Không được để trống trường thông tin!");
+        }
+    }
+
+    function remove(i) {
+        products.splice(i, 1);
+        table();
+    }
+
+    function edit(i) {
+        document.getElementById("id").value = products[i].id;
+        document.getElementById("name").value = products[i].name;
+        document.getElementById("price").value = products[i].price;
+        document.getElementById("save").innerHTML = `<button onclick="save(${i})">Lưu</button>`;
+
+    }
+
+    function save(i) {
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let price = document.getElementById("price").value;
+        if (id != '' && name != '' && price != '') {
+            products[i] = new Product(id, name, price);
+            table();
+            document.getElementById("id").value = '';
+            document.getElementById("name").value = '';
+            document.getElementById("price").value = '';
+        } else {
+            alert("Không được để trống trường thông tin!");
+        }
+    }
+</script>
+</body>
+</html>
