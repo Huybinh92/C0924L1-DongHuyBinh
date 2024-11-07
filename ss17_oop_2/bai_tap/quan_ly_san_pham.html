@@ -3,17 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+        }
+
+        table {
+            border-radius: 8px;
+            border-color: #d0d0d0;
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 8px 8px 8px 48px;
+            background-color: #f0f0f0;
+            border-right-color: #f0f0f0;
+        }
+
+        td {
+            padding: 8px 8px 8px 48px;
+            border-right-color: white;
+        }
+
+        .edit {
+            margin-right: 4px;
+            background-color: darkorange;
+            border-radius: 4px;
+            border: none;
+            padding: 4px 8px;
+            color: white;
+        }
+
+        .del {
+            margin-right: 4px;
+            background-color: red;
+            border-radius: 4px;
+            border: none;
+            padding: 4px 8px;
+            color: white;
+        }
+
+        input {
+            border: solid;
+            border-width: thin;
+            padding: 8px 8px;
+            border-color: #d0d0d0;
+            border-radius: 4px;
+            margin-right: 4px;
+            width: 120px;
+        }
+
+        .add {
+            margin-right: 4px;
+            background-color: dodgerblue;
+            border-radius: 4px;
+            border: none;
+            padding: 8px 12px;
+            color: white;
+            display: inline-block;
+        }
+
+        .save {
+            margin-right: 4px;
+            background-color: blue;
+            border-radius: 4px;
+            border: none;
+            padding: 8px 12px;
+            color: white;
+        }
+
+        .stt {
+            text-align: center;
+            padding: 8px 16px;
+        }
+    </style>
 </head>
 <body>
 <h3>Quản lý nhân viên</h3>
 <input id="id" placeholder="Nhập mã sản phẩm">
 <input id="name" placeholder="Nhập tên sản phẩm">
 <input id="price" placeholder="Nhập giá sản phẩm">
-<button onclick="addNew()">Thêm mới</button>
-<div id="save"></div>
+<button class="add" onclick="addNew()">Thêm mới</button>
+<div id="save" style="display: inline-block"></div>
 <br>
-<span>Số lượng sản phẩm:</span><span id="soLuong"></span>
-<table id="table" border="1" style="border-collapse: collapse">
+<div style="margin: 16px 0px"><span>Số lượng sản phẩm:</span><span id="soLuong"></span></div>
+<table id="table" border="1">
 
 </table>
 
@@ -36,20 +110,19 @@
 
     function table() {
         let tableString = `<tr>
-                             <th>STT</th>
+                             <th class="stt">STT</th>
                              <th>Mã sản phẩm</th>
                              <th>Tên sản phẩm</th>
                              <th>Giá</th>
-                             <th colspan="2">Hành động</th>
+                             <th>Hành động</th>
                            </tr>`;
         for (let i = 0; i < products.length; i++) {
             tableString += `<tr>
-                               <td>${i + 1}</td>
+                               <td class="stt">${i + 1}</td>
                                <td>${products[i].id}</td>
                                <td>${products[i].name}</td>
                                <td>${products[i].price}</td>
-                               <td><button onclick="edit(${i})">Sửa</button></td>
-                               <td><button onclick="remove(${i})">Xóa</button></td>
+                               <td><button class="edit" onclick="edit(${i})">Sửa</button><button class="del" onclick="remove(${i})">Xóa</button></td>
                              </tr>`;
         }
         document.getElementById("table").innerHTML = tableString;
@@ -81,7 +154,7 @@
         document.getElementById("id").value = products[i].id;
         document.getElementById("name").value = products[i].name;
         document.getElementById("price").value = products[i].price;
-        document.getElementById("save").innerHTML = `<button onclick="save(${i})">Lưu</button>`;
+        document.getElementById("save").innerHTML = `<button class="save" onclick="save(${i})">Lưu</button>`;
 
     }
 
