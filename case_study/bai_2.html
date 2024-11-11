@@ -5,6 +5,23 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    function checkTriangle(x, y, z) {
+        if (x + y <= z || x + z <= y || y + z <= x || x <= 0 || y <= 0 || z <= 0) {
+            alert('Không phải 3 cạnh tam giác');
+        } else {
+            if (x * x == y * y + z * z || y * y == x * x + z * z || z * z == y * y + x * x) {
+                alert('Là 3 cạnh tam giác vuông');
+            } else {
+                alert('Chỉ là 3 cạnh tam giác');
+            }
+        }
+    }
 
+    let x = +prompt("Nhập số thứ nhất");
+    let y = +prompt("Nhập số thứ hai");
+    let z = +prompt("Nhập số thứ ba");
+    checkTriangle(x, y, z);
+</script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function find(x) {
+        let array = x.split("/");
+        if (array.length != 2 || isNaN(array[0]) || isNaN(array[1]) || array[1] == 0) {
+            return console.log('Không phải là phân số');
+        }
+        if (array[0] == 0) {
+            return console.log('Phân số đã nhập bằng 0');
+        }
+        let a = parseFloat(array[0]);
+        let b = parseFloat(array[1]);
+        for (let i = 2; i <= a; i++) {
+            if (a % i == 0 && b % i == 0) {
+                a /= i;
+                b /= i;
+                i--;
+            }
+        }
+        console.log('Phân số đã nhập: ' + x);
+        console.log('Phân số rút gọn: ' + a + '/' + b);
+    }
+
+    find(prompt('Nhập phân số'));
+</script>
+</body>
+</html>

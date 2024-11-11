@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = prompt('Nhập độ dài mảng');
+    while (num < 1 || num % 1 != 0) {
+        num = prompt("Không hợp lệ, vui lòng nhập lại");
+    }
+    let array = [];
+    for (let i = 0; i < num; i++) {
+        let child = prompt('Nhập phần tử thứ ' + (i + 1));
+        while (isNaN(child)) {
+            child = prompt("Không hợp lệ, vui lòng nhập lại");
+        }
+        array.push(child);
+    }
+    console.log('Mảng vừa nhập là: ' + array);
+
+    function check(arr) {
+        if (arr.length < 2) {
+            return 'NO';
+        } else {
+            for (let i = 0; i < arr.length / 2; i++) {
+                if (arr[i] != arr[arr.length - 1 - i]) {
+                    return 'NO';
+                }
+            }
+            return 'OK';
+        }
+    }
+
+    console.log(check(array));
+</script>
+</body>
+</html>
