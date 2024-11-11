@@ -8,7 +8,7 @@
 <script>
     let arrLength = prompt('Nhập độ dài mảng (<=20)');
     let num = parseFloat(arrLength);
-    while (isNaN(num) || num < 2 || num > 20 || arrLength == '') {
+    while (isNaN(num) || num < 2 || num > 20 || arrLength == '' || num % 1 != 0) {
         arrLength = prompt("Không hợp lệ, vui lòng nhập lại");
         num = parseFloat(arrLength);
     }
