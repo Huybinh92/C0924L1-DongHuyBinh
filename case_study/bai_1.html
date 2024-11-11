@@ -7,18 +7,18 @@
 <body>
 <script>
     let arrLength = prompt('Nhập độ dài mảng (<=20)');
-    let num = parseInt(arrLength);
+    let num = parseFloat(arrLength);
     while (isNaN(num) || num < 2 || num > 20 || arrLength == '') {
         arrLength = prompt("Không hợp lệ, vui lòng nhập lại");
-        num = parseInt(arrLength);
+        num = parseFloat(arrLength);
     }
     let arr = [];
     for (let i = 0; i < num; i++) {
         let child = prompt('Nhập phần tử thứ ' + (i + 1));
-        let checkChild = parseInt(child);
+        let checkChild = parseFloat(child);
         while (isNaN(checkChild) || child == '') {
             child = prompt("Không hợp lệ, vui lòng nhập lại phần tử thứ " + (i + 1));
-            checkChild = parseInt(child);
+            checkChild = parseFloat(child);
         }
         arr[i] = checkChild;
     }
