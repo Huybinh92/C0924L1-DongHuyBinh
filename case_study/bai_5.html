@@ -7,7 +7,7 @@
 <body>
 <script>
     function findMaxNumber(n) {
-        if (isNaN(n) || n.length != 4) {
+        if (isNaN(n) || n.length != 4 || parseFloat(n) % 1 != 0) {
             return -1;
         }
         let array = n.split('');
