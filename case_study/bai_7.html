@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function numberOrChar(array) {
+        let check = isNaN(array[0]);
+        for (let i = 1; i < array.length; i++) {
+            if (check != isNaN(array[i])) {
+                return -1;
+            }
+            if (check == false) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
+
+    console.log(numberOrChar([1, 2, 3, 4]));
+    console.log(numberOrChar(['a', 'b', 'c', 'd']));
+    console.log(numberOrChar([1, 'b', 'c', 2]));
+    console.log(numberOrChar(['a', 1, 'c', 2]));
+</script>
+</body>
+</html>
