@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let vowel = ['a', 'e', 'i', 'o', 'u', 'y'];
+        let result = [];
+        for (let i = 0; i < str.length; i++) {
+            let char = str[i].toLowerCase();
+            if (vowel.includes(char)) {
+                result.push(char);
+                let index = vowel.indexOf(char);
+                vowel.splice(index, 1);
+                if (vowel.length == 0) {
+                    return result;
+                }
+            }
+        }
+        return result;
+    }
+
+    let string = prompt('Nhập chuỗi bất kỳ');
+    console.log('Chuỗi vừa nhập: ' + string);
+    console.log(checkString(string));
+</script>
+</body>
+</html>
