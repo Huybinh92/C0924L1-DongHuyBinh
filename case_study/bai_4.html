@@ -16,15 +16,22 @@
         }
         let a = parseFloat(array[0]);
         let b = parseFloat(array[1]);
-        for (let i = 2; i <= a; i++) {
-            if (a % i == 0 && b % i == 0) {
-                a /= i;
-                b /= i;
-                i--;
+        if (a % b == 0) {
+            console.log(x + ' = ' + a / b);
+        } else {
+            let min = a;
+            if (min > b) {
+                min = b;
             }
+            for (let i = 2; i <= min; i++) {
+                if (a % i == 0 && b % i == 0) {
+                    a /= i;
+                    b /= i;
+                    i--;
+                }
+            }
+            console.log(x + ' = ' + a + '/' + b);
         }
-        console.log('Phân số đã nhập: ' + x);
-        console.log('Phân số rút gọn: ' + a + '/' + b);
     }
 
     find(prompt('Nhập phân số'));
