@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkArray(arr) {
+        for (let i = 0; i < arr.length; i += 2) {
+            if (arr[i] >= arr[i + 1]) {
+                return 'NO';
+            }
+        }
+        return 'OK';
+    }
+
+    let num = prompt('Nhập chiều dài mảng là số chẵn bất kỳ >0');
+    while (isNaN(num) || num % 2 != 0 || num <= 0) {
+        num = prompt('yêu cầu nhập số chẵn >0');
+    }
+    let array = [];
+    for (let i = 1; i <= num; i++) {
+        array.push(+prompt('Nhập phần tử thứ ' + i));
+    }
+    console.log(checkArray(array));
+</script>
+</body>
+</html>
