@@ -73,9 +73,26 @@
         let ma = prompt('Mã học sinh (HV-XXXX: XXXX là số có 4 chữ số)');
         while (true) {
             let array = ma.split('-');
+            let check = false;
             if (array.length != 2 || array[0] != 'HV' || isNaN(array[1]) || array[1].length != 4) {
                 ma = prompt('Vui lòng nhập lại mã học sinh theo định dạng: HV-XXXX (XXXX là số có 4 chữ số)');
             } else {
+                if (students.length != 0) {
+                    for (let i = 0; i < students.length; i++) {
+                        if (ma == students[i].ma) {
+                            ma = prompt('Mã đã tồn tại, nhập lại mã học sinh theo định dạng: HV-XXXX (XXXX là số có 4 chữ số)');
+                            break;
+                        } else {
+                            if (i == students.length - 1) {
+                                check = true;
+                            }
+                        }
+                    }
+                } else {
+                    check = true;
+                }
+            }
+            if (check == true) {
                 break;
             }
         }
@@ -89,7 +106,7 @@
         let check = false;
         while (check == false) {
             let array = ngaySinh.split('/');
-            if (array.length != 3 || isNaN(array[0]) || isNaN(array[1]) || isNaN(array[2]) || array[0].length > 2 || array[1].length > 2 || array[2].length != 4 || parseFloat(array[0]) < 1 || parseFloat(array[1]) < 1 || parseFloat(array[2]) < 1) {
+            if (array.length != 3 || isNaN(array[0]) || isNaN(array[1]) || isNaN(array[2]) || array[0].length > 2 || array[1].length > 2 || array[2].length != 4 || parseFloat(array[0]) < 1 || parseFloat(array[1]) < 1 || parseFloat(array[1]) > 12 || parseFloat(array[2]) < 1) {
                 ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
             } else {
                 switch (array[1]) {
@@ -102,6 +119,8 @@
                     case '12':
                         if (parseFloat(array[0]) > 31) {
                             ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+                        } else {
+                            check = true;
                         }
                         break;
                     case '4':
@@ -110,11 +129,15 @@
                     case '11':
                         if (parseFloat(array[0]) > 30) {
                             ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+                        } else {
+                            check = true;
                         }
                         break;
                     case '2':
                         if (parseFloat(array[0]) > 28) {
                             ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+                        } else {
+                            check = true;
                         }
                         break;
                     default:
