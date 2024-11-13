@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            margin-bottom: 16px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 8px;
+        }
+
+        td {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button onclick="add()">Thêm học viên</button>
+    <button onclick="edit()">Sửa thông tin học viên</button>
+    <button onclick="del()">Xóa học viên</button>
+</div>
+<table id="table" border="1"></table>
+<script>
+    class Students {
+        constructor(ma, ten, lop, email, ngaySinh, module) {
+            this.ma = ma;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+            this.module = module;
+        }
+
+        getMa() {
+            return this.ma;
+        }
+    }
+
+    let students = [];
+    table();
+
+    function table() {
+        let tableString = `<tr>
+                            <th>Mã học viên</th>
+                            <th>Tên</th>
+                            <th>Lớp</th>
+                            <th>Email</th>
+                            <th>Ngày sinh</th>
+                            <th>Module</th>
+                        </tr>`;
+        for (let i = 0; i < students.length; i++) {
+            tableString += `<tr>
+                               <td>${students[i].ma}</td>
+                               <td>${students[i].ten}</td>
+                               <td>${students[i].lop}</td>
+                               <td>${students[i].email}</td>
+                               <td>${students[i].ngaySinh}</td>
+                               <td>${students[i].module}</td>
+                             </tr>`;
+        }
+        document.getElementById('table').innerHTML = tableString;
+    }
+
+    function createStudent() {
+        let ma = prompt('Mã học sinh (HV-XXXX: XXXX là số có 4 chữ số)');
+        while (true) {
+            let array = ma.split('-');
+            if (array.length != 2 || array[0] != 'HV' || isNaN(array[1]) || array[1].length != 4) {
+                ma = prompt('Vui lòng nhập lại mã học sinh theo định dạng: HV-XXXX (XXXX là số có 4 chữ số)');
+            } else {
+                break;
+            }
+        }
+        let ten = prompt('Họ tên (tối đa 50 ký tự)');
+        while (ten == '' || ten.length > 50) {
+            ten = prompt('Nhập lại họ tên học sinh (tối đa 50 ký tự)');
+        }
+        let lop = prompt('Lớp');
+        let email = prompt('Email');
+        let ngaySinh = prompt('Ngày sinh theo định dạng dd/mm/yyyy');
+        let check = false;
+        while (check == false) {
+            let array = ngaySinh.split('/');
+            if (array.length != 3 || isNaN(array[0]) || isNaN(array[1]) || isNaN(array[2]) || array[0].length > 2 || array[1].length > 2 || array[2].length != 4 || parseFloat(array[0]) < 1 || parseFloat(array[1]) < 1 || parseFloat(array[2]) < 1) {
+                ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+            } else {
+                switch (array[1]) {
+                    case '1':
+                    case '3':
+                    case '5':
+                    case '7':
+                    case '8':
+                    case '10':
+                    case '12':
+                        if (parseFloat(array[0]) > 31) {
+                            ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+                        }
+                        break;
+                    case '4':
+                    case '6':
+                    case '9':
+                    case '11':
+                        if (parseFloat(array[0]) > 30) {
+                            ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+                        }
+                        break;
+                    case '2':
+                        if (parseFloat(array[0]) > 28) {
+                            ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+                        }
+                        break;
+                    default:
+                        check = true;
+                }
+            }
+        }
+        let module = prompt('Module (1-6)');
+        while (isNaN(module) || module < 1 || module > 6) {
+            module = prompt('Nhập lại module học sinh (1-6)');
+        }
+        let newStudent = new Students(ma, ten, lop, email, ngaySinh, module);
+        students.push(newStudent);
+        table();
+    }
+
+    function add() {
+        createStudent();
+    }
+
+    function edit() {
+        let maEdit = prompt('Nhập mã học sinh cần sửa thông tin');
+        for (let i = 0; i < students.length; i++) {
+            if (students[i].ma == maEdit) {
+                createStudent();
+            } else {
+                if (i == students.length - 1) {
+                    alert('Mã học sinh không tồn tại!');
+                }
+            }
+        }
+    }
+
+    function del() {
+        let maDel = prompt('Nhập mã học sinh cần sửa thông tin');
+        for (let i = 0; i < students.length; i++) {
+            if (students[i].ma == maDel) {
+                let check = confirm('Bạn chắc chắn muốn xóa học sinh có mã: ' + maDel);
+                if (check) {
+                    students.splice(i, 1);
+                    return table();
+                }
+            } else {
+                if (i == students.length - 1) {
+                    alert('Mã học sinh không tồn tại!');
+                }
+            }
+        }
+
+    }
+</script>
+</body>
+</html>
