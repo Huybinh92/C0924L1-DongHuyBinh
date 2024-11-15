@@ -30,12 +30,12 @@
 <table id="table" border="1"></table>
 <script>
     class Students {
-        constructor(ma, ten, lop, email, ngaySinh, module) {
-            this.ma = ma;
-            this.ten = ten;
-            this.lop = lop;
+        constructor(id, name, room, email, dateOfBirth, module) {
+            this.id = id;
+            this.name = name;
+            this.room = room;
             this.email = email;
-            this.ngaySinh = ngaySinh;
+            this.dateOfBirth = dateOfBirth;
             this.module = module;
         }
     }
@@ -54,11 +54,11 @@
                         </tr>`;
         for (let i = 0; i < students.length; i++) {
             tableString += `<tr>
-                               <td>${students[i].ma}</td>
-                               <td>${students[i].ten}</td>
-                               <td>${students[i].lop}</td>
+                               <td>${students[i].id}</td>
+                               <td>${students[i].name}</td>
+                               <td>${students[i].room}</td>
                                <td>${students[i].email}</td>
-                               <td>${students[i].ngaySinh}</td>
+                               <td>${students[i].dateOfBirth}</td>
                                <td>${students[i].module}</td>
                              </tr>`;
         }
@@ -66,17 +66,17 @@
     }
 
     function createStudent() {
-        let ma = prompt('Mã học sinh (HV-XXXX: XXXX là số có 4 chữ số)');
+        let id = prompt('Mã học sinh (HV-XXXX: XXXX là số có 4 chữ số)');
         while (true) {
-            let array = ma.split('-');
+            let array = id.split('-');
             let check = false;
             if (array.length != 2 || array[0] != 'HV' || isNaN(array[1]) || array[1].length != 4) {
-                ma = prompt('Vui lòng nhập lại mã học sinh theo định dạng: HV-XXXX (XXXX là số có 4 chữ số)');
+                id = prompt('Vui lòng nhập lại mã học sinh theo định dạng: HV-XXXX (XXXX là số có 4 chữ số)');
             } else {
                 if (students.length != 0) {
                     for (let i = 0; i < students.length; i++) {
-                        if (ma == students[i].ma) {
-                            ma = prompt('Mã đã tồn tại, nhập lại mã học sinh theo định dạng: HV-XXXX (XXXX là số có 4 chữ số)');
+                        if (id == students[i].id) {
+                            id = prompt('Mã đã tồn tại, nhập lại mã học sinh theo định dạng: HV-XXXX (XXXX là số có 4 chữ số)');
                             break;
                         } else {
                             if (i == students.length - 1) {
@@ -92,18 +92,18 @@
                 break;
             }
         }
-        let ten = prompt('Họ tên (tối đa 50 ký tự)');
-        while (ten == '' || ten.length > 50) {
-            ten = prompt('Nhập lại họ tên học sinh (tối đa 50 ký tự)');
+        let name = prompt('Họ tên (tối đa 50 ký tự)');
+        while (name == '' || name.length > 50) {
+            name = prompt('Nhập lại họ tên học sinh (tối đa 50 ký tự)');
         }
-        let lop = prompt('Lớp');
+        let room = prompt('Lớp');
         let email = prompt('Email');
-        let ngaySinh = prompt('Ngày sinh theo định dạng dd/mm/yyyy');
+        let dateOfBirth = prompt('Ngày sinh theo định dạng dd/mm/yyyy');
         let check = false;
         while (check == false) {
-            let array = ngaySinh.split('/');
+            let array = dateOfBirth.split('/');
             if (array.length != 3 || isNaN(array[0]) || isNaN(array[1]) || isNaN(array[2]) || array[0].length != 2 || array[1].length != 2 || array[2].length != 4 || parseFloat(array[0]) < 1 || parseFloat(array[1]) < 1 || parseFloat(array[1]) > 12 || parseFloat(array[2]) < 1) {
-                ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+                dateOfBirth = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
             } else {
                 switch (array[1]) {
                     case '01':
@@ -114,7 +114,7 @@
                     case '10':
                     case '12':
                         if (parseFloat(array[0]) > 31) {
-                            ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+                            dateOfBirth = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
                         } else {
                             check = true;
                         }
@@ -124,14 +124,14 @@
                     case '09':
                     case '11':
                         if (parseFloat(array[0]) > 30) {
-                            ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+                            dateOfBirth = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
                         } else {
                             check = true;
                         }
                         break;
                     case '02':
                         if (parseFloat(array[0]) > 28) {
-                            ngaySinh = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
+                            dateOfBirth = prompt('Vui lòng nhập lại ngày sinh theo định dạng dd/mm/yyyy');
                         } else {
                             check = true;
                         }
@@ -145,7 +145,7 @@
         while (isNaN(module) || module < 1 || module > 6) {
             module = prompt('Nhập lại module học sinh (1-6)');
         }
-        let newStudent = new Students(ma, ten, lop, email, ngaySinh, module);
+        let newStudent = new Students(id, name, room, email, dateOfBirth, module);
         students.push(newStudent);
         table();
     }
@@ -155,9 +155,9 @@
     }
 
     function edit() {
-        let maEdit = prompt('Nhập mã học sinh cần sửa thông tin');
+        let idEdit = prompt('Nhập mã học sinh cần sửa thông tin');
         for (let i = 0; i < students.length; i++) {
-            if (students[i].ma == maEdit) {
+            if (students[i].id == idEdit) {
                 createStudent();
             } else {
                 if (i == students.length - 1) {
@@ -168,10 +168,10 @@
     }
 
     function del() {
-        let maDel = prompt('Nhập mã học sinh cần xóa');
+        let idDel = prompt('Nhập mã học sinh cần xóa');
         for (let i = 0; i < students.length; i++) {
-            if (students[i].ma == maDel) {
-                let check = confirm('Bạn chắc chắn muốn xóa học sinh có mã: ' + maDel);
+            if (students[i].id == idDel) {
+                let check = confirm('Bạn chắc chắn muốn xóa học sinh có mã: ' + idDel);
                 if (check) {
                     students.splice(i, 1);
                     return table();

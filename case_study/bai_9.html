@@ -21,7 +21,11 @@
     }
     let array = [];
     for (let i = 1; i <= num; i++) {
-        array.push(+prompt('Nhập số thứ ' + i));
+        let child = prompt('Nhập số thứ ' + i);
+        while (isNaN(child)) {
+            child = prompt('Vui lòng nhập vào 1 số');
+        }
+        array.push(child);
     }
     console.log('Mảng vừa nhập là: ' + array);
     console.log(checkArray(array));
