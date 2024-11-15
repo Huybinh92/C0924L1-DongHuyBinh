@@ -7,12 +7,13 @@
 <body>
 <script>
     function checkArray(arr) {
-        for (let i = 0; i < arr.length-1; i += 2) {
+        for (let i = 0; i < arr.length - 1; i += 2) {
             if (arr[i] >= arr[i + 1]) {
-                return 'NO';
+                alert('NO');
+                return;
             }
         }
-        return 'OK';
+        alert('OK');
     }
 
     let num = prompt('Nhập chiều dài mảng là số chẵn bất kỳ >0');
@@ -27,8 +28,8 @@
         }
         array.push(child);
     }
-    console.log('Mảng vừa nhập là: ' + array);
-    console.log(checkArray(array));
+    alert('Mảng vừa nhập là: ' + array);
+    checkArray(array);
 </script>
 </body>
 </html>
