@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findFibonaci(array) {
+        let max = Math.max(...array);
+        let fibonaci = [0, 1];
+        while (fibonaci[fibonaci.length - 1] < max) {
+            fibonaci.push(fibonaci[fibonaci.length - 1] + fibonaci[fibonaci.length - 2]);
+        }
+        fibonaci = [...new Set(fibonaci)];
+        console.log(fibonaci);
+        let result = [];
+        for (let i = 0; i < fibonaci.length; i++) {
+            for (let j = 0; j < array.length; j++) {
+                if (array[j] == fibonaci[i]) {
+                    result.push(array[j]);
+                }
+            }
+        }
+        return result;
+    }
+
+    alert(findFibonaci([1, 5, 6, 13, 9, 12, 8, 0, 5, 1]));
+</script>
+</body>
+</html>

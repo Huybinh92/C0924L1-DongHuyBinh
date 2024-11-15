@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function total(array) {
+        let sum = 0;
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (i % 3 == 0 && array[i] % 5 == 0) {
+                sum += parseInt(array[i]);
+                count++;
+            }
+        }
+        return sum / count;
+    }
+
+    let arrLength = prompt('Nhập độ dài mảng <=50');
+    while (isNaN(arrLength) || arrLength < 1 || arrLength > 50 || arrLength % 1 != 0) {
+        arrLength = prompt('Vui lòng nhập độ dài mảng <=50');
+    }
+    let array = [];
+    for (let i = 1; i <= arrLength; i++) {
+        let child = prompt('Nhập số nguyên thứ ' + i);
+        while (isNaN(child) || child % 1 != 0) {
+            child = prompt('Nhập lại số nguyên thứ ' + i);
+        }
+        array.push(child);
+    }
+    console.log('Mảng vừa nhập là: ' + array);
+    console.log('Trung bình của các phần tử chia hết cho 5 ở vị trí chia hết cho 3: ' + total(array));
+</script>
+</body>
+</html>
