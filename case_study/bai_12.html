@@ -146,19 +146,23 @@
             module = prompt('Nhập lại module học sinh (1-6)');
         }
         let newStudent = new Students(id, name, room, email, dateOfBirth, module);
-        students.push(newStudent);
-        table();
+        return newStudent;
     }
 
     function add() {
-        createStudent();
+        let newStudent = createStudent();
+        students.push(newStudent);
+        table();
     }
 
     function edit() {
         let idEdit = prompt('Nhập mã học sinh cần sửa thông tin');
         for (let i = 0; i < students.length; i++) {
             if (students[i].id == idEdit) {
-                createStudent();
+                let newStudent = createStudent();
+                students[i] = newStudent;
+                table();
+                return;
             } else {
                 if (i == students.length - 1) {
                     alert('Mã học sinh không tồn tại!');
