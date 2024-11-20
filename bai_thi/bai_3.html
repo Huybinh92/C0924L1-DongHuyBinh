@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkMonth(month) {
+        let array = month.split('/');
+        switch (array[0]) {
+            case '01':
+            case '03':
+            case '05':
+            case '07':
+            case '08':
+            case '10':
+            case '12':
+                alert('Tháng ' + month + ' có 31 ngày');
+                break;
+            case '04':
+            case '06':
+            case '09':
+            case '11':
+                alert('Tháng ' + month + ' có 30 ngày');
+                break;
+            case '02':
+                if ((array[1] % 4 === 0 && array[1] % 100 !== 0) || array[1] % 400 === 0) {
+                    alert('Tháng ' + month + ' có 29 ngày');
+                } else {
+                    alert('Tháng ' + month + ' có 28 ngày');
+                }
+        }
+    }
+
+    let month;
+    let part;
+    do {
+        month = prompt('Nhập tháng/năm theo định dạng MM/yyyy');
+        part = month.split('/');
+    }
+    while (part.length !== 2 || isNaN(part[0]) || isNaN(part[1]) || part[0].length !== 2 || part[1].length !== 4 || part[0] < 1 || part[0] > 12 || part[2] < 1);
+    checkMonth(month);
+</script>
+</body>
+</html>
