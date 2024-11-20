@@ -39,7 +39,7 @@
         month = prompt('Nhập tháng/năm theo định dạng MM/yyyy');
         part = month.split('/');
     }
-    while (part.length !== 2 || isNaN(part[0]) || isNaN(part[1]) || part[0].length !== 2 || part[1].length !== 4 || part[0] < 1 || part[0] > 12 || part[2] < 1);
+    while (part.length !== 2 || isNaN(part[0]) || isNaN(part[1]) || part[0].length !== 2 || part[1].length !== 4 || part[0] < 1 || part[0] > 12 || part[1] < 1);
     checkMonth(month);
 </script>
 </body>
