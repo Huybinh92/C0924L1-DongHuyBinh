@@ -25,9 +25,9 @@
     let worker4 = new Worker(4, "Hoang Van D", "11/10/2002", "Bac Ninh", 5000, "Nhan vien");
     let worker5 = new Worker(5, "Le Van E", "15/02/1997", "Ha Tinh", 6000, "Nhan vien");
     let workers = [worker1, worker2, worker3, worker4, worker5];
-    table();
+    display();
 
-    function table() {
+    function display() {
         workers.sort(compareWorker);
         for (let i = 0; i < workers.length; i++) {
             workers[i].order = i + 1;
